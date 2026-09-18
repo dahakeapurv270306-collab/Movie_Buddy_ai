@@ -160,7 +160,7 @@ def index():
     if request.method == "POST":
         user_message = request.form.get("message", "").strip()
         if user_message:
-            chat = session["chat"]  
+            chat = session["chat"]
             chat.append(("user", user_message))
             chat.append(("bot", get_response(user_message)))
             session["chat"] = chat
